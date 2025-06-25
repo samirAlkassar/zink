@@ -1,0 +1,104 @@
+@import "tailwindcss";
+/* Theme customization using @theme */
+@theme {
+    --color-background: var(--background);
+    --color-primary: var(--primary);
+    --color-secondary: var(--secondary);
+    --color-border: var(--border);
+    --color-forground: var(--forground);
+
+    --font-sans: 'Inter', sans-serif;
+
+    /* Tailwind token overrides */
+    --tw-font-family-sans: var(--font-sans);
+    --tw-color-primary: var(--color-background);
+}
+
+@layer base {
+  :root {
+    --background: #faf8f8;
+    --primary: #1a243a;
+    --secondary: #bdc8df;
+    --border: #e4e4e4;      /* ⚡ ultra-subtle border (almost invisible) */
+    --forground: #f5f5f5;
+  }
+
+  .dark {
+    --background: #121212;
+    --primary: #f9fafb;
+    --secondary: #9ca3af;
+    --border: #232323;    /* ⚡ softened border for dark theme */
+    --forground: #18181b;
+  }
+
+
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-background text-primary transition-colors duration-300;
+    font-feature-settings: "rlig" 1,"calt" 1;
+  }
+}
+
+
+@utility primary-shadow {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 1px 4px 0px, inset -2px -2px 5px rgba(0, 0, 0, 0.1);
+}
+@utility primary-shadow-hover {
+   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+/* Adding custom styles or components */
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded bg-background text-white font-bold hover:bg-background/80;
+  }
+}
+
+/* Custom utilities */
+@layer utilities {
+  .scrollbar-hide {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .testBorder {
+    border: 1px solid red;
+  }
+  .ripple-primary {
+    background-position: center;
+    transition: background 0.8s;
+    cursor: pointer;
+  }
+
+  .ripple-primary:hover {
+    background: var(--primary) radial-gradient(circle, transparent 1%, var(--primary) 1%) center/15000%;
+  }
+
+  .ripple-primary:active {
+    background-color: var(--secondary);
+    background-size: 100%;
+    transition: background 0s;
+  }
+  .ripple-secondary {
+    background-position: center;
+    transition: background 0.8s;
+    cursor: pointer;
+  }
+
+  .ripple-secondary:hover {
+    background: var(--background) radial-gradient(circle, transparent 1%, var(--background) 1%) center/15000%;
+  }
+
+  .ripple-secondary:active {
+    background-color: var(--secondary);
+    background-size: 100%;
+    transition: background 0s;
+  }
+}
+
