@@ -8,7 +8,7 @@ import { IoCheckmarkCircleOutline } from "react-icons/io5";
 import { SlCalender } from "react-icons/sl";
 
 export const Projects = () => {
-    const {showNewTaskModal, setShowNewTaskModal, projectsList, setProjectsList} = useProjectsContext();
+    const {projectsList} = useProjectsContext();
 
     return (
     projectsList.length === 0 ? (

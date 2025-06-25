@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ThemeButton } from "./ThemeButton";
 import { Buttons } from "./ui/Buttons";
 import { Container } from "./ui/Container";
@@ -9,10 +10,10 @@ export const Header = () => {
     return (
         <header className="py-5">
             <Container className="flex items-center justify-between">
-                <a className="flex items-center gap-2 justify-center cursor-pointer" href="/">
+                <Link className="flex items-center gap-2 justify-center cursor-pointer" href="/">
                     <CiBasketball  className="text-3xl" />
                     <h1 className="font-semibold text-xl">ZenK</h1>
-                </a>
+                </Link>
 
                 <div className="flex items-center lg:gap-2 gap-1">
                     <ThemeButton />

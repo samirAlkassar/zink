@@ -13,12 +13,12 @@ import { auth } from "../../lib/firebase/firebase";
 import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup  } from "firebase/auth";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/context/authContext";
+import Link from "next/link";
 
 
 const SignUpPage = () => {
     const router = useRouter(); // ✅
     const loadingBar = useRef<any>(null); // ← loading bar reference
-    const {loading } = useAuth();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
@@ -81,7 +81,7 @@ const SignUpPage = () => {
         <>
         <LoadingBar color="#f11946" height={3} ref={loadingBar} />
         {/* {loading && <p className="text-blue-500">Loading...</p>} */}
-        {/* {error && <p className="text-red-500">{error}</p>} */}
+        {error && <p className="text-red-500">{error}</p>}
         {/* {isSigningUp && (<p className="text-blue-500">Signing in...</p>)} */}
         <div>
             <ThemeButton className="absolute right-4 top-4" />
@@ -89,10 +89,10 @@ const SignUpPage = () => {
 
         <section className="flex flex-col items-center justify-center h-screen bg-background">
 
-            <a className="flex items-center gap-2 justify-center cursor-pointer mb-6" href="/">
+            <Link className="flex items-center gap-2 justify-center cursor-pointer mb-6" href="/">
                     <CiBasketball  className="text-4xl" />
                     <h1 className="font-semibold text-3xl">ZenK</h1>
-            </a>
+            </Link>
 
             <div className="bg-background primary-shadow rounded-lg p-8 w-lg flex flex-col items-center">
                 <Headings variant="h3" className="text-center mb-1">Create Account</Headings>

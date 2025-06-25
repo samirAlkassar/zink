@@ -1,4 +1,3 @@
-import { create } from "domain";
 import {auth } from "./firebase";
 
 import {createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup} from "firebase/auth";

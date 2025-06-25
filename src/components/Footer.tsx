@@ -1,6 +1,7 @@
 import {Container} from "./ui/Container";
 import { CiBasketball } from "react-icons/ci";
 import { SubHeadings } from "./ui/SubHeadings";
+import Link from "next/link";
 
 
 export const Footer = () => {
@@ -15,9 +16,9 @@ export const Footer = () => {
                         © 2025 ZenK. All rights reserved.
                     </SubHeadings>
                     <div className="flex items-center gap-4">
-                        <a href="/" className="text-primary/80 hover:text-primary transition-colors">Privacy</a>
-                        <a href="/" className="text-primary/80 hover:text-primary transition-colors">Terms</a>
-                        <a href="/" className="text-primary/80 hover:text-primary transition-colors">Contact</a>
+                        <Link href="/" className="text-primary/80 hover:text-primary transition-colors">Privacy</Link>
+                        <Link href="/" className="text-primary/80 hover:text-primary transition-colors">Terms</Link>
+                        <Link href="/" className="text-primary/80 hover:text-primary transition-colors">Contact</Link>
                     </div>
             </Container>
         </footer>

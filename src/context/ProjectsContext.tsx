@@ -12,7 +12,7 @@ interface projectsContextType {
 interface projectsListType {
     title: string;
     description?:string;
-    icon?: any;
+    icon?: string;
     color?: string;
     priority: string;
     group?:string;

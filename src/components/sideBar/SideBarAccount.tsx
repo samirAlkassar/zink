@@ -9,6 +9,7 @@ import { twMerge } from 'tailwind-merge';
 import { useAuth } from "@/context/authContext";
 import { useRouter } from "next/navigation";
 import { useSideBarContext } from "@/context/SideBarContext";
+import Image from 'next/image';
 
 export const SideBarAccount = () => {
     const {sideBarCollapse} = useSideBarContext();
@@ -39,7 +40,7 @@ export const SideBarAccount = () => {
         <div className={twMerge("flex items-center px-4 py-4 space-y-1 mt-5 hover:bg-secondary/30 hover:cursor-pointer",sideBarCollapse? "justify-center": "justify-between")}>
             <div className="flex items-center justify-start gap-2">
                 <button id={sideBarCollapse ? "account-button" : ""} onClick={sideBarCollapse ? handleClick : undefined} className={sideBarCollapse? "cursor-pointer" : ""}>
-                    <img className="max-h-8 max-w-8 rounded-full" src='/samir-profile.jpg' alt="avatar"/>
+                    <Image className="max-h-8 max-w-8 rounded-full" src='/samir-profile.jpg' alt="avatar"/>
                 </button>
                 <div className={sideBarCollapse? "hidden" : "block"}>
                     <p className="text-sm text-primary -mb-1">User Name</p>

@@ -13,7 +13,7 @@ export const ThemeButton = ({className}:{className?:string}) => {
             } else {
                 document.documentElement.classList.remove("dark");
             }
-        },[])
+        },[theme])
 
         const toggleDarkMode = () => {
             if (theme === "light") {

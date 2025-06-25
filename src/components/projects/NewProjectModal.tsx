@@ -7,10 +7,21 @@ import { MdClose } from "react-icons/md";
 import {useProjectsContext} from "@/context/ProjectsContext"
 import { useState } from "react";
 
+interface projectsListType {
+    title: string;
+    description?:string;
+    icon?: string;
+    color?: string;
+    priority: string;
+    group?:string;
+    done: boolean;
+    users: string[];
+    deadline?: string;
+}
 
 
 export const NewProjectModal = () => {
-    const {showNewTaskModal, setShowNewTaskModal, projectsList, setProjectsList} = useProjectsContext();
+    const {showNewTaskModal, setShowNewTaskModal, setProjectsList} = useProjectsContext();
 
 
     const [title, setTitle] = useState<string>("");
@@ -21,11 +32,9 @@ export const NewProjectModal = () => {
     const [priority, setPriority] = useState<string>("");
     const [users, setUsers] = useState<string>("");
     
-    if (!showNewTaskModal) return null;
-
     const handleSubmition  = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        setProjectsList((prev: any) => [
+        setProjectsList((prev: projectsListType[]) => [
             ...prev,
             {
                 title,
@@ -34,7 +43,8 @@ export const NewProjectModal = () => {
                 color,
                 group,
                 priority,
-                users,
+                users: users ? [users] : [],
+                done: false,
             }
         ]);
         setShowNewTaskModal(false);
@@ -47,6 +57,8 @@ export const NewProjectModal = () => {
         setUsers("");
     }
 
+
+    if (!showNewTaskModal) return null;
     return (
         <div className="fixed inset-0 z-50 backdrop-blur-xs bg-black/40 flex items-center justify-center">
             <div className="bg-forground text-primary rounded-lg shadow-lg w-full max-w-2xl p-6 relative">

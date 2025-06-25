@@ -9,7 +9,7 @@ import { FiPlus } from "react-icons/fi";
 import {useProjectsContext} from "@/context/ProjectsContext"
 
 export const ProjectsHeader = () => {
-    const {showNewTaskModal, setShowNewTaskModal} = useProjectsContext();
+    const {setShowNewTaskModal} = useProjectsContext();
     return (
         <div className=" flex justify-between items-center">
             <div className="flex flex-col">
