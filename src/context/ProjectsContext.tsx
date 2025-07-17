@@ -13,7 +13,7 @@ interface projectsListType {
     title: string;
     description?:string;
     icon?: string;
-    color?: string;
+    colorTheme?: string;
     priority: string;
     group?:string;
     done: boolean;

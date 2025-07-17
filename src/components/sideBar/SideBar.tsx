@@ -27,7 +27,7 @@ export const SideBar = () => {
                     <SideBarItem icon={<LuLeaf />} text="Garden" />
                 </nav>
                 <div className="px-2 py-4">
-                    <SideBarItem icon={<IoSettingsOutline />} text="Settings" rotate={true} />
+                    <SideBarItem icon={<IoSettingsOutline />} text="Settings" rotate={true} href="/app/settings" />
                 </div>
             </div>
             <div>

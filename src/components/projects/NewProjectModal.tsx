@@ -1,5 +1,7 @@
 "use client";
 
+import { db } from "@/lib/firebase/firebase";
+import { collection, addDoc } from "firebase/firestore";
 import { Buttons } from "@/components/ui/Buttons";
 import { Headings } from "@/components/ui/Headings";
 import IconButton from '@mui/material/IconButton';
@@ -11,7 +13,7 @@ interface projectsListType {
     title: string;
     description?:string;
     icon?: string;
-    color?: string;
+    colorTheme?: string;
     priority: string;
     group?:string;
     done: boolean;
@@ -27,7 +29,7 @@ export const NewProjectModal = () => {
     const [title, setTitle] = useState<string>("");
     const [description, setDescription] = useState<string>("");
     const [deadline, setDeadline] = useState<string>("");
-    const [color, setColor] = useState<string>("");
+    const [colorTheme, setColor] = useState<string>("");
     const [group, setGroup] = useState<string>("");
     const [priority, setPriority] = useState<string>("");
     const [users, setUsers] = useState<string>("");
@@ -40,7 +42,7 @@ export const NewProjectModal = () => {
                 title,
                 description,
                 deadline,
-                color,
+                colorTheme,
                 group,
                 priority,
                 users: users ? [users] : [],
@@ -118,7 +120,7 @@ export const NewProjectModal = () => {
                         <div className="flex gap-4">
                             <div className="flex flex-col gap-1  w-full">
                                 <label htmlFor="descripTask">Color</label>                                   
-                                <input type="color" defaultValue="#a259ff" className="rounded-md border border-border text-primary focus:outline-none w-full h-full" value={color} onChange={(e)=>{e.target.value}}/>
+                                <input type="color" defaultValue="#a259ff" className="rounded-md border border-border text-primary focus:outline-none w-full h-full" value={colorTheme} onChange={(e)=>{e.target.value}}/>
                             </div>
 
                             <div className="flex flex-col gap-1  w-full">

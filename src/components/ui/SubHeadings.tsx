@@ -13,7 +13,7 @@ const subHeaderClasses = cva("text-primary/75 ", {
         variant: {
             p1: "text-md md:text-lg lg:text-xl max-w-lg sm:max-w-6xl",
             p2: "text-sm md:text-md lg:text-lg max-w-lg sm:max-w-6xl",
-            p3: "text-xs md:text-sm lg:text-md max-w-sm",
+            p3: "text-xs md:text-sm lg:text-[15.2px] max-w-sm",
         },
     },
     defaultVariants: {
