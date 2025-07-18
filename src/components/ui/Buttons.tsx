@@ -18,6 +18,7 @@ const buttonClasses = cva("border border-secondary/50 primary-shadow hover:prima
             primary: "bg-primary text-background hover:bg-primary/90 ripple-primary",
             secondary: "text-primary hover:bg-secondary/30 ripple-secondary",
             outline: "border border-gray-300 text-gray-700 hover:bg-gray-100",
+            danger: "bg-red-500 text-white hover:bg-red-700 ripple-danger",
         },
         size: {
             small: "px-3 py-2 md:px-4 md:py-2 text-xs md:text-sm",

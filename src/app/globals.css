@@ -6,6 +6,7 @@
     --color-secondary: var(--secondary);
     --color-border: var(--border);
     --color-forground: var(--forground);
+    --color-danger: var(--danger); /* Custom danger color */
 
     --font-sans: 'Inter', sans-serif;
 
@@ -21,6 +22,7 @@
     --secondary: #bdc8df;
     --border: #e4e4e4;      /* ⚡ ultra-subtle border (almost invisible) */
     --forground: #f5f5f5;
+    --danger: #f7caca;      /* ⚡ custom danger color */
   }
 
   .dark {
@@ -29,6 +31,7 @@
     --secondary: #9ca3af;
     --border: #232323;    /* ⚡ softened border for dark theme */
     --forground: #18181b;
+    --danger: #5518189a;    /* ⚡ custom danger color for dark theme */
   }
 
 
@@ -100,5 +103,18 @@
     background-size: 100%;
     transition: background 0s;
   }
-}
 
+  .ripple-danger {
+    background-position: center;
+    transition: background 0.8s;
+    cursor: pointer;
+  }
+  .ripple-danger:hover {
+    background: #eb2222 radial-gradient(circle, transparent 1%, #ef4444 1%) center/15000%; /* Tailwind red-500 */
+  }
+  .ripple-danger:active {
+    background-color: #fa0000fa;
+    background-size: 100%;
+    transition: background 0s;
+  }
+}
